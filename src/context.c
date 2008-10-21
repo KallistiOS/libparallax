@@ -12,8 +12,6 @@
 
 #include <plx/context.h>
 
-CVSID("$Id: context.c,v 1.1 2002/09/11 05:53:29 bardtx Exp $");
-
 /* See the header file for all comments and documentation */
 
 /* Our working context and header */

@@ -12,8 +12,6 @@
 #include <dc/video.h>
 #include <plx/matrix.h>
 
-CVSID("$Id: mat3d.c,v 1.3 2003/03/09 01:24:11 bardtx Exp $");
-
 /*
   Most of this file was pulled from KGL's gltrans.c. Why did we do that
   instead of just suggesting linking with KGL to get them? Because:

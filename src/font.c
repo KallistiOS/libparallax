@@ -14,8 +14,6 @@
 #include <plx/font.h>
 #include <plx/prim.h>
 
-CVSID("$Id: font.c,v 1.8 2003/05/21 03:52:29 bardtx Exp $");
-
 /* See the header file for all comments and documentation */
 
 /*

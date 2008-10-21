@@ -15,8 +15,6 @@
 #include <jpeg/jpeg.h>
 #include <kmg/kmg.h>
 
-CVSID("$Id: texture.c,v 1.3 2003/04/24 02:58:49 bardtx Exp $");
-
 /* See the header file for all comments and documentation */
 
 /* Utility function to fill out the initial poly contexts */

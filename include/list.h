@@ -4,7 +4,6 @@
 
    (c)2002 Dan Potter
 
-   $Id: list.h,v 1.1 2002/09/08 06:39:06 bardtx Exp $
 
 */
 

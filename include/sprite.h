@@ -4,7 +4,6 @@
 
    (c)2002 Dan Potter
 
-   $Id: sprite.h,v 1.2 2002/09/08 06:45:08 bardtx Exp $
 
 */
 

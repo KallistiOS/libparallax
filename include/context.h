@@ -4,7 +4,6 @@
 
    (c)2002 Dan Potter
 
-   $Id: context.h,v 1.1 2002/09/11 05:53:28 bardtx Exp $
 
 */
 

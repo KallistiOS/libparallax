@@ -4,7 +4,6 @@
 
    (c)2002 Dan Potter
 
-   $Id: matrix.h,v 1.4 2003/03/09 01:24:11 bardtx Exp $
 
 */
 

@@ -4,7 +4,6 @@
 
    (c)2002 Dan Potter
 
-   $Id: prim.h,v 1.3 2002/09/28 08:02:08 bardtx Exp $
 
 */
 

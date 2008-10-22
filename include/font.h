@@ -4,7 +4,6 @@
 
    (c)2002 Dan Potter
 
-   $Id: font.h,v 1.4 2002/09/28 08:02:08 bardtx Exp $
 
 */
 

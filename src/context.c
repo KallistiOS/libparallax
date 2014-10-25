@@ -68,6 +68,11 @@ void plx_cxt_fog(int type) {
 	compile_cxts();
 }
 
+void plx_cxt_specular(int type) {
+	cxt_working.gen.specular = type;
+	compile_cxts();
+}
+
 void plx_cxt_send(int type) {
 	switch (type) {
 	case PVR_LIST_OP_POLY:
@@ -83,4 +88,3 @@ void plx_cxt_send(int type) {
 		assert_msg( 0, "List type not handled by plx_cxt_send" );
 	}
 }
-

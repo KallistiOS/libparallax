@@ -10,7 +10,7 @@
 #include <dc/fmath.h>
 #include <dc/matrix.h>
 #include <dc/video.h>
-#include <plx/matrix.h>
+#include "matrix.h"
 
 /*
   Most of this file was pulled from KGL's gltrans.c. Why did we do that
@@ -107,7 +107,7 @@ void plx_mat3d_viewport(int x1, int y1, int width, int height) {
 }
 
 /* Setup perspective */
-void plx_mat3d_perspective(float angle, float aspect, 
+void plx_mat3d_perspective(float angle, float aspect,
 	float znear, float zfar)
 {
 	float xmin, xmax, ymin, ymax;
@@ -440,4 +440,3 @@ void plx_mat3d_init() {
 	plx_mat3d_viewport(0, 0, vid_mode->width, vid_mode->height);
 	vp_z_fudge = 0.0f;
 }
-

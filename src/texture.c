@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <plx/texture.h>
+#include "texture.h"
 #include <png/png.h>
 #include <jpeg/jpeg.h>
 #include <kmg/kmg.h>
@@ -173,7 +173,7 @@ void plx_txr_setfilter(plx_texture_t * txr, int mode) {
 
 void plx_txr_setuvclamp(plx_texture_t * txr, int umode, int vmode) {
 	int mode;
-	
+
 	assert( txr != NULL );
 	if (txr == NULL) return;
 

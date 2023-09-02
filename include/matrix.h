@@ -2,7 +2,7 @@
 
    matrix.h
 
-   (c)2002 Dan Potter
+   Copyright (C) 2002 Megan Potter
 
 
 */
@@ -116,4 +116,3 @@ void plx_mat3d_apply_all();
 __END_DECLS
 
 #endif	/* __PARALLAX_MATRIX */
-

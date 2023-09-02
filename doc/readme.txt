@@ -1,5 +1,5 @@
 Parallax for KOS ##version##
-(c)2002 Dan Potter
+Copyright (C) 2002 Megan Potter
 
 
 What is it?
@@ -8,7 +8,7 @@ What is it?
 Parallax is my answer to wanting a nice, simple API with which to write
 mostly-2D games for KOS. Brian Peek and I both needed something like this
 which is faster (and cuts around much of the properness of things like KGL)
-for our projects, and so we sat down and came up with a basic list of 
+for our projects, and so we sat down and came up with a basic list of
 requirements and specs, and I got to coding.
 
 
@@ -23,7 +23,7 @@ These are the basic requirements we shared:
 - Speed is an essential priority for things like submitting sprites and
   vertices; thus anything in the main code path needs to be inlined or
   made into macros if at all possible, and even use DR where possible.
-  
+
 - Everything should be based around supporting and enhancing the native
   libraries rather than replacing them. Thus Parallax can be used with the
   PVR API or inside a KGL program as if it were all straight PVR calls.
@@ -44,4 +44,3 @@ License
 
 Parallax is licensed under the same license as KOS (BSD-style). See
 README.KOS for more specific information.
-

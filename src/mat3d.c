@@ -1,8 +1,8 @@
 /* Parallax for KallistiOS ##version##
 
    mat3d.c
-   (c)2001-2002 Dan Potter
-   (c)2002 Benoit Miller and Paul Boese
+   Copyright (C) 2001-2002 Megan Potter
+   Copyright (C) 2002 Benoit Miller and Paul Boese
 */
 
 #include <assert.h>

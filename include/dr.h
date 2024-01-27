@@ -3,6 +3,7 @@
    dr.h
 
    Copyright (C) 2002 Megan Potter
+   Copyright (C) 2024 Falco Girgis
 
 
 */
@@ -38,6 +39,8 @@ static inline plx_vertex_t *plx_dr_target(plx_dr_state_t *state) {
 static inline void plx_dr_commit(plx_vertex_t *vertex) {
   pvr_dr_commit((pvr_vertex_t *)vertex);
 }
+
+#define plx_dr_finish pvr_dr_finish
 
 #define plx_prim pvr_prim
 

@@ -40,9 +40,13 @@ static inline void plx_dr_commit(plx_vertex_t *vertex) {
   pvr_dr_commit((pvr_vertex_t *)vertex);
 }
 
-#define plx_dr_finish pvr_dr_finish
+static inline void plx_dr_finish(void) {
+  pvr_dr_finish();
+}
 
-#define plx_prim pvr_prim
+static inline int plx_prim(void *data, int size) {
+  return pvr_prim(data, size)
+}
 
 static inline void plx_scene_begin() {
 	pvr_wait_ready();

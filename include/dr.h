@@ -45,7 +45,7 @@ static inline void plx_dr_finish(void) {
 }
 
 static inline int plx_prim(void *data, int size) {
-  return pvr_prim(data, size)
+  return pvr_prim(data, size);
 }
 
 static inline void plx_scene_begin() {

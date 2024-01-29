@@ -29,23 +29,23 @@ typedef pvr_vertex_t plx_vertex_t;
 #define PLX_VERT_EOS	PVR_CMD_VERTEX_EOL
 
 static inline void plx_dr_init(plx_dr_state_t *state) {
-  pvr_dr_init((pvr_dr_state_t *)state);
+    pvr_dr_init((pvr_dr_state_t *)state);
 }
 
 static inline plx_vertex_t *plx_dr_target(plx_dr_state_t *state) {
-  return (plx_vertex_t *)pvr_dr_target(*(pvr_dr_state_t*)state);
+    return (plx_vertex_t *)pvr_dr_target(*(pvr_dr_state_t*)state);
 }
 
 static inline void plx_dr_commit(plx_vertex_t *vertex) {
-  pvr_dr_commit((pvr_vertex_t *)vertex);
+    pvr_dr_commit((pvr_vertex_t *)vertex);
 }
 
 static inline void plx_dr_finish(void) {
-  pvr_dr_finish();
+    pvr_dr_finish();
 }
 
 static inline int plx_prim(void *data, int size) {
-  return pvr_prim(data, size);
+    return pvr_prim(data, size);
 }
 
 static inline void plx_scene_begin() {

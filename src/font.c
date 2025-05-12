@@ -58,27 +58,27 @@
 */
 
 #define PACKED __attribute__((packed))
-typedef struct {
-	uint8	magic[4]		PACKED;
-	uint32	endian			PACKED;
-	uint32	format			PACKED;
-	uint32	txr_width		PACKED;
-	uint32	txr_height		PACKED;
-	int32	max_ascent		PACKED;
-	int32	max_descent		PACKED;
-	uint32	glyph_cnt		PACKED;
+typedef struct PACKED {
+	uint8	magic[4];
+	uint32	endian;
+	uint32	format;
+	uint32	txr_width;
+	uint32	txr_height;
+	int32	max_ascent;
+	int32	max_descent;
+	uint32	glyph_cnt;
 } txfhdr_t;
 
-typedef struct {
-	int16	idx			PACKED;
-	int8	w			PACKED;
-	int8	h			PACKED;
-	int8	x_offset		PACKED;
-	int8	y_offset		PACKED;
-	int8	advance			PACKED;
-	char	padding			PACKED;
-	uint16	x			PACKED;
-	uint16	y			PACKED;
+typedef struct PACKED {
+	int16	idx;
+	int8	w;
+	int8	h;
+	int8	x_offset;
+	int8	y_offset;
+	int8	advance;
+	char	padding;
+	uint16	x;
+	uint16	y;
 } txfglyph_t;
 
 /* This function DEFINITELY has function growth hormone inbalance syndrome,

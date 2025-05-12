@@ -59,7 +59,7 @@
 
 #define PACKED __attribute__((packed))
 typedef struct PACKED {
-	uint8	magic[4];
+	char	magic[4];
 	uint32	endian;
 	uint32	format;
 	uint32	txr_width;
@@ -91,7 +91,7 @@ plx_font_t * plx_font_load(const char * fn) {
 	int		i, x, y;
 	float		xstep, ystep, w, h;
 	uint8		* bmtmp = NULL;
-	uint32		bmsize;
+	ssize_t		bmsize;
 	uint16		* txrtmp = NULL;
 	int		stride;
 
@@ -116,7 +116,7 @@ plx_font_t * plx_font_load(const char * fn) {
 		goto fail_2;	/* bail */
 	}
 
-	if (hdr.magic[0] != 0xff || strncmp("txf", hdr.magic+1, 3)) {
+	if ((uint8)hdr.magic[0] != 0xff || strncmp("txf", hdr.magic+1, 3)) {
 		dbglog(DBG_WARNING, "plx_font_load: invalid font file '%s'\n", fn);
 		goto fail_2;	/* bail */
 	}

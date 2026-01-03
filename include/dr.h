@@ -53,7 +53,7 @@ static inline void plx_scene_begin() {
 	pvr_scene_begin();
 }
 
-static inline void plx_list_begin(int type) {
+static inline void plx_list_begin(pvr_list_t type) {
 	pvr_list_begin(type);
 }
 

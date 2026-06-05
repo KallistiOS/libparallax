@@ -11,7 +11,7 @@
 #ifndef __PARALLAX_DR
 #define __PARALLAX_DR
 
-#include <sys/cdefs.h>
+#include <kos/cdefs.h>
 __BEGIN_DECLS
 
 /**
@@ -28,8 +28,9 @@ typedef pvr_vertex_t plx_vertex_t;
 #define PLX_VERT	PVR_CMD_VERTEX
 #define PLX_VERT_EOS	PVR_CMD_VERTEX_EOL
 
+__depr("plx_dr_init is not useful anymore")
 static inline void plx_dr_init(plx_dr_state_t *state) {
-    pvr_dr_init((pvr_dr_state_t *)state);
+    (void)state;
 }
 
 static inline plx_vertex_t *plx_dr_target(plx_dr_state_t *state) {
@@ -40,9 +41,8 @@ static inline void plx_dr_commit(plx_vertex_t *vertex) {
     pvr_dr_commit((pvr_vertex_t *)vertex);
 }
 
-static inline void plx_dr_finish(void) {
-    pvr_dr_finish();
-}
+__depr("plx_dr_finish is not useful anymore")
+static inline void plx_dr_finish(void) {}
 
 static inline int plx_prim(void *data, int size) {
     return pvr_prim(data, size);

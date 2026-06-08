@@ -18,7 +18,7 @@
 static pvr_poly_cxt_t   cxt_working;
 static pvr_poly_hdr_t   hdr_working_op, hdr_working_tr, hdr_working_pt;
 
-static void compile_cxts() {
+static void compile_cxts(void) {
     cxt_working.list_type = PVR_LIST_OP_POLY;
     cxt_working.gen.alpha = PVR_ALPHA_DISABLE;
     cxt_working.txr.env = PVR_TXRENV_MODULATE;
@@ -35,7 +35,7 @@ static void compile_cxts() {
     pvr_poly_compile(&hdr_working_pt, &cxt_working);
 }
 
-void plx_cxt_init() {
+void plx_cxt_init(void) {
     pvr_poly_cxt_col(&cxt_working, PVR_LIST_TR_POLY);
     cxt_working.gen.culling = PVR_CULLING_NONE;
 }

@@ -48,7 +48,7 @@ static inline int plx_prim(void *data, int size) {
     return pvr_prim(data, size);
 }
 
-static inline void plx_scene_begin() {
+static inline void plx_scene_begin(void) {
     pvr_wait_ready();
     pvr_scene_begin();
 }
@@ -57,7 +57,7 @@ static inline void plx_list_begin(pvr_list_t type) {
     pvr_list_begin(type);
 }
 
-static inline void plx_scene_end() {
+static inline void plx_scene_end(void) {
     pvr_scene_finish();
 }
 

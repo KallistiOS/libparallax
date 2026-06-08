@@ -52,7 +52,7 @@ __BEGIN_DECLS
 
 /** Call before doing anything else, or after switching video
     modes to setup some basic parameters. */
-void plx_mat3d_init();
+void plx_mat3d_init(void);
 
 /** Set which matrix we are working on */
 void plx_mat3d_mode(int mode);
@@ -66,7 +66,7 @@ void plx_mat3d_mode(int mode);
 #define PLX_MAT_COUNT       5
 
 /** Load an identity matrix */
-void plx_mat3d_identity();
+void plx_mat3d_identity(void);
 
 /** Load a raw matrix */
 void plx_mat3d_load(matrix_t * src);
@@ -84,13 +84,13 @@ void plx_mat3d_perspective(float angle, float aspect, float znear, float zfar);
 void plx_mat3d_frustum(float left, float right, float bottom, float top, float znear, float zfar);
 
 /** Push a matrix on the stack */
-void plx_mat3d_push();
+void plx_mat3d_push(void);
 
 /** Pop a matrix from the stack and reload it */
-void plx_mat3d_pop();
+void plx_mat3d_pop(void);
 
 /** Reload a matrix from the top of the stack, but don't pop it */
-void plx_mat3d_peek();
+void plx_mat3d_peek(void);
 
 /** Rotation */
 void plx_mat3d_rotate(float angle, float x, float y, float z);
@@ -111,7 +111,7 @@ void plx_mat3d_apply(int mode);
 void plx_mat3d_apply_mat(matrix_t * src);
 
 /** Apply all the matrices for a normal 3D scene */
-void plx_mat3d_apply_all();
+void plx_mat3d_apply_all(void);
 
 __END_DECLS
 

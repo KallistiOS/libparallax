@@ -52,138 +52,138 @@ __BEGIN_DECLS
   DR. The coordinates are at the center point.
  */
 static inline void plx_spr_fnd(plx_dr_state_t * state,
-	float wi, float hi,
-	float x, float y, float z,
-	float a, float r, float g, float b)
+    float wi, float hi,
+    float x, float y, float z,
+    float a, float r, float g, float b)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	plx_vert_ffd(state, PLX_VERT,
-		x - w, y + h, z,
-		a, r, g, b,
-		0.0f, 1.0f);
-	plx_vert_ffd(state, PLX_VERT,
-		x - w, y - h, z,
-		a, r, g, b,
-		0.0f, 0.0f);
-	plx_vert_ffd(state, PLX_VERT,
-		x + w, y + h, z,
-		a, r, g, b,
-		1.0f, 1.0f);
-	plx_vert_ffd(state, PLX_VERT_EOS,
-		x + w, y - h, z,
-		a, r, g, b,
-		1.0f, 0.0f);
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    plx_vert_ffd(state, PLX_VERT,
+        x - w, y + h, z,
+        a, r, g, b,
+        0.0f, 1.0f);
+    plx_vert_ffd(state, PLX_VERT,
+        x - w, y - h, z,
+        a, r, g, b,
+        0.0f, 0.0f);
+    plx_vert_ffd(state, PLX_VERT,
+        x + w, y + h, z,
+        a, r, g, b,
+        1.0f, 1.0f);
+    plx_vert_ffd(state, PLX_VERT_EOS,
+        x + w, y - h, z,
+        a, r, g, b,
+        1.0f, 0.0f);
 }
 
 /**
   Like plx_spr_fnd, but with integer color.
  */
 static inline void plx_spr_ind(plx_dr_state_t * state,
-	float wi, float hi,
-	float x, float y, float z,
-	uint32_t color)
+    float wi, float hi,
+    float x, float y, float z,
+    uint32_t color)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	plx_vert_ifd(state, PLX_VERT,
-		x - w, y + h, z,
-		color,
-		0.0f, 1.0f);
-	plx_vert_ifd(state, PLX_VERT,
-		x - w, y - h, z,
-		color,
-		0.0f, 0.0f);
-	plx_vert_ifd(state, PLX_VERT,
-		x + w, y + h, z,
-		color,
-		1.0f, 1.0f);
-	plx_vert_ifd(state, PLX_VERT_EOS,
-		x + w, y - h, z,
-		color,
-		1.0f, 0.0f);
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    plx_vert_ifd(state, PLX_VERT,
+        x - w, y + h, z,
+        color,
+        0.0f, 1.0f);
+    plx_vert_ifd(state, PLX_VERT,
+        x - w, y - h, z,
+        color,
+        0.0f, 0.0f);
+    plx_vert_ifd(state, PLX_VERT,
+        x + w, y + h, z,
+        color,
+        1.0f, 1.0f);
+    plx_vert_ifd(state, PLX_VERT_EOS,
+        x + w, y - h, z,
+        color,
+        1.0f, 0.0f);
 }
 
 /**
   Like plx_spr_fnd, but using matrix math.
  */
 static inline void plx_spr_fmd(plx_dr_state_t * state,
-	float wi, float hi,
-	float xi, float yi, float zi,
-	float a, float r, float g, float b)
+    float wi, float hi,
+    float xi, float yi, float zi,
+    float a, float r, float g, float b)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	float x, y, z;
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    float x, y, z;
 
-	x = xi-w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffd(state, PLX_VERT,
-		x, y, z,
-		a, r, g, b,
-		0.0f, 1.0f);
+    x = xi-w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffd(state, PLX_VERT,
+        x, y, z,
+        a, r, g, b,
+        0.0f, 1.0f);
 
-	x = xi-w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffd(state, PLX_VERT,
-		x, y, z,
-		a, r, g, b,
-		0.0f, 0.0f);
+    x = xi-w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffd(state, PLX_VERT,
+        x, y, z,
+        a, r, g, b,
+        0.0f, 0.0f);
 
-	x = xi+w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffd(state, PLX_VERT,
-		x, y, z,
-		a, r, g, b,
-		1.0f, 1.0f);
+    x = xi+w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffd(state, PLX_VERT,
+        x, y, z,
+        a, r, g, b,
+        1.0f, 1.0f);
 
-	x = xi+w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffd(state, PLX_VERT_EOS,
-		x, y, z,
-		a, r, g, b,
-		1.0f, 0.0f);
+    x = xi+w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffd(state, PLX_VERT_EOS,
+        x, y, z,
+        a, r, g, b,
+        1.0f, 0.0f);
 }
 
 /**
   Like plx_spr_fmd, but using integer colors.
  */
 static inline void plx_spr_imd(plx_dr_state_t * state,
-	float wi, float hi,
-	float xi, float yi, float zi,
-	uint32_t color)
+    float wi, float hi,
+    float xi, float yi, float zi,
+    uint32_t color)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	float x, y, z;
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    float x, y, z;
 
-	x = xi-w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifd(state, PLX_VERT,
-		x, y, z,
-		color,
-		0.0f, 1.0f);
+    x = xi-w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifd(state, PLX_VERT,
+        x, y, z,
+        color,
+        0.0f, 1.0f);
 
-	x = xi-w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifd(state, PLX_VERT,
-		x, y, z,
-		color,
-		0.0f, 0.0f);
+    x = xi-w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifd(state, PLX_VERT,
+        x, y, z,
+        color,
+        0.0f, 0.0f);
 
-	x = xi+w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifd(state, PLX_VERT,
-		x, y, z,
-		color,
-		1.0f, 1.0f);
+    x = xi+w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifd(state, PLX_VERT,
+        x, y, z,
+        color,
+        1.0f, 1.0f);
 
-	x = xi+w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifd(state, PLX_VERT_EOS,
-		x, y, z,
-		color,
-		1.0f, 0.0f);
+    x = xi+w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifd(state, PLX_VERT_EOS,
+        x, y, z,
+        color,
+        1.0f, 0.0f);
 }
 
 /**************************************************** PVR_PRIM VERSIONS ***/
@@ -192,140 +192,140 @@ static inline void plx_spr_imd(plx_dr_state_t * state,
   Like plx_spr_fnd, but using pvr_prim.
  */
 static inline void plx_spr_fnp(
-	float wi, float hi,
-	float x, float y, float z,
-	float a, float r, float g, float b)
+    float wi, float hi,
+    float x, float y, float z,
+    float a, float r, float g, float b)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	plx_vert_ffp(PLX_VERT,
-		x - w, y + h, z,
-		a, r, g, b,
-		0.0f, 1.0f);
-	plx_vert_ffp(PLX_VERT,
-		x - w, y - h, z,
-		a, r, g, b,
-		0.0f, 0.0f);
-	plx_vert_ffp(PLX_VERT,
-		x + w, y + h, z,
-		a, r, g, b,
-		1.0f, 1.0f);
-	plx_vert_ffp(PLX_VERT_EOS,
-		x + w, y - h, z,
-		a, r, g, b,
-		1.0f, 0.0f);
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    plx_vert_ffp(PLX_VERT,
+        x - w, y + h, z,
+        a, r, g, b,
+        0.0f, 1.0f);
+    plx_vert_ffp(PLX_VERT,
+        x - w, y - h, z,
+        a, r, g, b,
+        0.0f, 0.0f);
+    plx_vert_ffp(PLX_VERT,
+        x + w, y + h, z,
+        a, r, g, b,
+        1.0f, 1.0f);
+    plx_vert_ffp(PLX_VERT_EOS,
+        x + w, y - h, z,
+        a, r, g, b,
+        1.0f, 0.0f);
 }
 
 /**
   Like plx_spr_ind, but using pvr_prim.
  */
 static inline void plx_spr_inp(
-	float wi, float hi,
-	float x, float y, float z,
-	uint32_t color)
+    float wi, float hi,
+    float x, float y, float z,
+    uint32_t color)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	plx_vert_ifp(PLX_VERT,
-		x - w, y + h, z,
-		color,
-		0.0f, 1.0f);
-	plx_vert_ifp(PLX_VERT,
-		x - w, y - h, z,
-		color,
-		0.0f, 0.0f);
-	plx_vert_ifp(PLX_VERT,
-		x + w, y + h, z,
-		color,
-		1.0f, 1.0f);
-	plx_vert_ifp(PLX_VERT_EOS,
-		x + w, y - h, z,
-		color,
-		1.0f, 0.0f);
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    plx_vert_ifp(PLX_VERT,
+        x - w, y + h, z,
+        color,
+        0.0f, 1.0f);
+    plx_vert_ifp(PLX_VERT,
+        x - w, y - h, z,
+        color,
+        0.0f, 0.0f);
+    plx_vert_ifp(PLX_VERT,
+        x + w, y + h, z,
+        color,
+        1.0f, 1.0f);
+    plx_vert_ifp(PLX_VERT_EOS,
+        x + w, y - h, z,
+        color,
+        1.0f, 0.0f);
 }
 
 /**
   Like plx_spr_fmd, but using pvr_prim.
  */
 static inline void plx_spr_fmp(
-	float wi, float hi,
-	float xi, float yi, float zi,
-	float a, float r, float g, float b)
+    float wi, float hi,
+    float xi, float yi, float zi,
+    float a, float r, float g, float b)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	float x, y, z;
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    float x, y, z;
 
-	x = xi-w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffp(PLX_VERT,
-		x, y, z,
-		a, r, g, b,
-		0.0f, 1.0f);
+    x = xi-w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffp(PLX_VERT,
+        x, y, z,
+        a, r, g, b,
+        0.0f, 1.0f);
 
-	x = xi-w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffp(PLX_VERT,
-		x, y, z,
-		a, r, g, b,
-		0.0f, 0.0f);
+    x = xi-w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffp(PLX_VERT,
+        x, y, z,
+        a, r, g, b,
+        0.0f, 0.0f);
 
-	x = xi+w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffp(PLX_VERT,
-		x, y, z,
-		a, r, g, b,
-		1.0f, 1.0f);
+    x = xi+w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffp(PLX_VERT,
+        x, y, z,
+        a, r, g, b,
+        1.0f, 1.0f);
 
-	x = xi+w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ffp(PLX_VERT_EOS,
-		x, y, z,
-		a, r, g, b,
-		1.0f, 0.0f);
+    x = xi+w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ffp(PLX_VERT_EOS,
+        x, y, z,
+        a, r, g, b,
+        1.0f, 0.0f);
 }
 
 /**
   Like plx_spr_imd, but using pvr_prim.
  */
 static inline void plx_spr_imp(
-	float wi, float hi,
-	float xi, float yi, float zi,
-	uint32_t color)
+    float wi, float hi,
+    float xi, float yi, float zi,
+    uint32_t color)
 {
-	float w = wi / 2.0f;
-	float h = hi / 2.0f;
-	float x, y, z;
+    float w = wi / 2.0f;
+    float h = hi / 2.0f;
+    float x, y, z;
 
-	x = xi-w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifp(PLX_VERT,
-		x, y, z,
-		color,
-		0.0f, 1.0f);
+    x = xi-w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifp(PLX_VERT,
+        x, y, z,
+        color,
+        0.0f, 1.0f);
 
-	x = xi-w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifp(PLX_VERT,
-		x, y, z,
-		color,
-		0.0f, 0.0f);
+    x = xi-w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifp(PLX_VERT,
+        x, y, z,
+        color,
+        0.0f, 0.0f);
 
-	x = xi+w; y = yi+h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifp(PLX_VERT,
-		x, y, z,
-		color,
-		1.0f, 1.0f);
+    x = xi+w; y = yi+h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifp(PLX_VERT,
+        x, y, z,
+        color,
+        1.0f, 1.0f);
 
-	x = xi+w; y = yi-h; z = zi;
-	plx_mat_tfip_2d(x, y, z);
-	plx_vert_ifp(PLX_VERT_EOS,
-		x, y, z,
-		color,
-		1.0f, 0.0f);
+    x = xi+w; y = yi-h; z = zi;
+    plx_mat_tfip_2d(x, y, z);
+    plx_vert_ifp(PLX_VERT_EOS,
+        x, y, z,
+        color,
+        1.0f, 0.0f);
 }
 
 __END_DECLS
 
-#endif	/* __PARALLAX_SPRITE */
+#endif  /* __PARALLAX_SPRITE */

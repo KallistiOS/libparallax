@@ -28,14 +28,14 @@ __BEGIN_DECLS
   and should not be tampered with.
  */
 typedef struct plx_font {
-	plx_texture_t	* txr;		/**< Our font texture */
-	int		glyph_cnt;	/**< The number of glyphs we have loaded */
-	int		map_cnt;	/**< Size of our font map in entries */
-	short		* map;		/**< Mapping from 16-bit character to glyph index */
-	point_t		* txr_ll;	/**< Lower-left texture coordinates */
-	point_t		* txr_ur;	/**< Upper-right texture coordinates */
-	point_t		* vert_ll;	/**< Lower-left vertex coordinates */
-	point_t		* vert_ur;	/**< Upper-right vertex coordinates */
+    plx_texture_t   * txr;      /**< Our font texture */
+    int     glyph_cnt;  /**< The number of glyphs we have loaded */
+    int     map_cnt;    /**< Size of our font map in entries */
+    short       * map;      /**< Mapping from 16-bit character to glyph index */
+    point_t     * txr_ll;   /**< Lower-left texture coordinates */
+    point_t     * txr_ur;   /**< Upper-right texture coordinates */
+    point_t     * vert_ll;  /**< Lower-left vertex coordinates */
+    point_t     * vert_ur;  /**< Upper-right vertex coordinates */
 } plx_font_t;
 
 
@@ -46,18 +46,18 @@ typedef struct plx_font {
   private and should not be tampered with.
  */
 typedef struct plx_fcxt {
-	plx_font_t	* fnt;		/**< Our current font */
-	int		list;		/**< Which PLX list will we use? */
-	float		slant;		/**< For oblique text output */
-	float		size;		/**< Pixel size */
-	float		gap;		/**< Extra pixels between each char */
-	float		fixed_width;	/**< Width of each character in points in fixed mode */
-	uint32_t	flags;		/**< Font attributes */
-	uint32_t	color;		/**< Color value */
-	point_t		pos;		/**< Output position */
+    plx_font_t  * fnt;      /**< Our current font */
+    int     list;       /**< Which PLX list will we use? */
+    float       slant;      /**< For oblique text output */
+    float       size;       /**< Pixel size */
+    float       gap;        /**< Extra pixels between each char */
+    float       fixed_width;    /**< Width of each character in points in fixed mode */
+    uint32_t    flags;      /**< Font attributes */
+    uint32_t    color;      /**< Color value */
+    point_t     pos;        /**< Output position */
 } plx_fcxt_t;
 
-#define PLX_FCXT_FIXED	0x0001		/**< Fixed width flag */
+#define PLX_FCXT_FIXED  0x0001      /**< Fixed width flag */
 
 /**
   Load a font from the VFS. Fonts are currently in the standard TXF format,
@@ -88,13 +88,13 @@ void plx_fcxt_destroy(plx_fcxt_t * cxt);
   Given a font context, return the metrics of the individual named character.
  */
 void plx_fcxt_char_metrics(plx_fcxt_t * cxt, uint16_t ch,
-	float * outleft, float * outup, float * outright, float * outdown);
+    float * outleft, float * outup, float * outright, float * outdown);
 
 /**
   Given a font context, return the metrics of the given string.
  */
 void plx_fcxt_str_metrics(plx_fcxt_t * cxt, const char * str,
-	float * outleft, float * outup, float * outright, float *outdown);
+    float * outleft, float * outup, float * outright, float *outdown);
 
 /**
   Set the slant value for the given context.
@@ -127,7 +127,7 @@ void plx_fcxt_setcolor4f(plx_fcxt_t * cxt, float a, float r, float g, float b);
   point numbers.
  */
 void plx_fcxt_getcolor4f(plx_fcxt_t * cxt, float * outa, float * outr,
-	float * outg, float * outb);
+    float * outg, float * outb);
 
 /**
   Set the color value for the given context as a packed integer.
@@ -196,4 +196,4 @@ void plx_fcxt_end(plx_fcxt_t * cxt);
 
 __END_DECLS
 
-#endif	/* __PARALLAX_FONT */
+#endif  /* __PARALLAX_FONT */

@@ -32,7 +32,7 @@ static void fill_contexts(plx_texture_t * txr) {
 }
 
 plx_texture_t * plx_txr_load(const char * fn, int use_alpha, int txrload_flags) {
-	uint32		mask;
+	uint32_t		mask;
 	kos_img_t	img;
 	plx_texture_t	* txr;
 	int		fnlen;

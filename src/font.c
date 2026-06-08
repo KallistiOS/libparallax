@@ -59,26 +59,26 @@
 
 #define PACKED __attribute__((packed))
 typedef struct PACKED {
-	char	magic[4];
-	uint32	endian;
-	uint32	format;
-	uint32	txr_width;
-	uint32	txr_height;
-	int32	max_ascent;
-	int32	max_descent;
-	uint32	glyph_cnt;
+	char		magic[4];
+	uint32_t	endian;
+	uint32_t	format;
+	uint32_t	txr_width;
+	uint32_t	txr_height;
+	int32_t		max_ascent;
+	int32_t		max_descent;
+	uint32_t	glyph_cnt;
 } txfhdr_t;
 
 typedef struct PACKED {
-	int16	idx;
-	int8	w;
-	int8	h;
-	int8	x_offset;
-	int8	y_offset;
-	int8	advance;
+	int16_t	idx;
+	int8_t	w;
+	int8_t	h;
+	int8_t	x_offset;
+	int8_t	y_offset;
+	int8_t	advance;
 	char	padding;
-	uint16	x;
-	uint16	y;
+	uint16_t	x;
+	uint16_t	y;
 } txfglyph_t;
 
 /* This function DEFINITELY has function growth hormone inbalance syndrome,
@@ -90,9 +90,9 @@ plx_font_t * plx_font_load(const char * fn) {
 	txfglyph_t	g;
 	int		i, x, y;
 	float		xstep, ystep, w, h;
-	uint8		* bmtmp = NULL;
+	uint8_t		* bmtmp = NULL;
 	ssize_t		bmsize;
-	uint16		* txrtmp = NULL;
+	uint16_t	* txrtmp = NULL;
 	int		stride;
 
 	/* Open the input file */
@@ -116,7 +116,7 @@ plx_font_t * plx_font_load(const char * fn) {
 		goto fail_2;	/* bail */
 	}
 
-	if ((uint8)hdr.magic[0] != 0xff || strncmp("txf", hdr.magic+1, 3)) {
+	if ((uint8_t)hdr.magic[0] != 0xff || strncmp("txf", hdr.magic+1, 3)) {
 		dbglog(DBG_WARNING, "plx_font_load: invalid font file '%s'\n", fn);
 		goto fail_2;	/* bail */
 	}
@@ -252,11 +252,11 @@ plx_font_t * plx_font_load(const char * fn) {
 		/* Convert to ARGB4444 -- go backwards so we can do it in place */
 		/* PLIB seems to duplicate the alpha value into luminance.  I think it
 		 * looks nicer to hardcode luminance to 1.0; characters look more robust. */
-		bmtmp = (uint8 *)txrtmp;
+		bmtmp = (uint8_t *)txrtmp;
 		for (x=bmsize-1; x>=0; x--) {
-			uint8 alpha = (bmtmp[x] & 0xF0) >> 4;
-			/* uint8 lum   = alpha; */
-			uint8 lum   = 0x0f;
+			uint8_t alpha = (bmtmp[x] & 0xF0) >> 4;
+			/* uint8_t lum   = alpha; */
+			uint8_t lum   = 0x0f;
 			txrtmp[x] = (alpha << 12) | (lum << 8) | (lum << 4) | (lum << 0);
 		}
 		bmtmp = NULL;
@@ -353,7 +353,7 @@ void plx_fcxt_destroy(plx_fcxt_t * cxt) {
 	free(cxt);
 }
 
-void plx_fcxt_char_metrics(plx_fcxt_t * cxt, uint16 ch,
+void plx_fcxt_char_metrics(plx_fcxt_t * cxt, uint16_t ch,
 	float * outleft, float * outup, float * outright, float *outdown)
 {
 	plx_font_t	* fnt;
@@ -498,7 +498,7 @@ void plx_fcxt_end(plx_fcxt_t * cxt) {
 	assert( cxt != NULL );
 }
 
-float plx_fcxt_draw_ch(plx_fcxt_t * cxt, uint16 ch) {
+float plx_fcxt_draw_ch(plx_fcxt_t * cxt, uint16_t ch) {
 	plx_vertex_t	vert;
 	plx_font_t	* fnt;
 	int		i;

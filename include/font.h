@@ -52,8 +52,8 @@ typedef struct plx_fcxt {
 	float		size;		/**< Pixel size */
 	float		gap;		/**< Extra pixels between each char */
 	float		fixed_width;	/**< Width of each character in points in fixed mode */
-	uint32		flags;		/**< Font attributes */
-	uint32		color;		/**< Color value */
+	uint32_t	flags;		/**< Font attributes */
+	uint32_t	color;		/**< Color value */
 	point_t		pos;		/**< Output position */
 } plx_fcxt_t;
 
@@ -87,7 +87,7 @@ void plx_fcxt_destroy(plx_fcxt_t * cxt);
 /**
   Given a font context, return the metrics of the individual named character.
  */
-void plx_fcxt_char_metrics(plx_fcxt_t * cxt, uint16 ch,
+void plx_fcxt_char_metrics(plx_fcxt_t * cxt, uint16_t ch,
 	float * outleft, float * outup, float * outright, float * outdown);
 
 /**
@@ -132,12 +132,12 @@ void plx_fcxt_getcolor4f(plx_fcxt_t * cxt, float * outa, float * outr,
 /**
   Set the color value for the given context as a packed integer.
  */
-void plx_fcxt_setcolor1u(plx_fcxt_t * cxt, uint32 color);
+void plx_fcxt_setcolor1u(plx_fcxt_t * cxt, uint32_t color);
 
 /**
   Get the color value for the given context as a packed integer.
  */
-uint32 plx_fcxt_getcolor1u(plx_fcxt_t * cxt);
+uint32_t plx_fcxt_getcolor1u(plx_fcxt_t * cxt);
 
 /**
   Set the output cursor position for the given context using a point_t.
@@ -180,7 +180,7 @@ void plx_fcxt_begin(plx_fcxt_t * cxt);
   Draw a single character with the given context and parameters.
   Returns the cursor advancement amount.
  */
-float plx_fcxt_draw_ch(plx_fcxt_t * cxt, uint16 ch);
+float plx_fcxt_draw_ch(plx_fcxt_t * cxt, uint16_t ch);
 
 /**
   Draw a string with the given context and parameters.

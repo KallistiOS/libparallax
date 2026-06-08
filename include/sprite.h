@@ -82,7 +82,7 @@ static inline void plx_spr_fnd(plx_dr_state_t * state,
 static inline void plx_spr_ind(plx_dr_state_t * state,
 	float wi, float hi,
 	float x, float y, float z,
-	uint32 color)
+	uint32_t color)
 {
 	float w = wi / 2.0f;
 	float h = hi / 2.0f;
@@ -151,7 +151,7 @@ static inline void plx_spr_fmd(plx_dr_state_t * state,
 static inline void plx_spr_imd(plx_dr_state_t * state,
 	float wi, float hi,
 	float xi, float yi, float zi,
-	uint32 color)
+	uint32_t color)
 {
 	float w = wi / 2.0f;
 	float h = hi / 2.0f;
@@ -222,7 +222,7 @@ static inline void plx_spr_fnp(
 static inline void plx_spr_inp(
 	float wi, float hi,
 	float x, float y, float z,
-	uint32 color)
+	uint32_t color)
 {
 	float w = wi / 2.0f;
 	float h = hi / 2.0f;
@@ -291,7 +291,7 @@ static inline void plx_spr_fmp(
 static inline void plx_spr_imp(
 	float wi, float hi,
 	float xi, float yi, float zi,
-	uint32 color)
+	uint32_t color)
 {
 	float w = wi / 2.0f;
 	float h = hi / 2.0f;

@@ -21,8 +21,8 @@ __BEGIN_DECLS
 #include <dc/pvr.h>
 
 static inline uint32_t plx_pack_color(float a, float r, float g, float b) {
-	return PVR_PACK_COLOR(a, r, g, b);
+    return PVR_PACK_COLOR(a, r, g, b);
 }
 __END_DECLS
 
-#endif	/* __PARALLAX_COLOR */
+#endif  /* __PARALLAX_COLOR */

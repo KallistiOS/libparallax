@@ -30,18 +30,18 @@ __BEGIN_DECLS
 
 /** Texture structure */
 typedef struct plx_texture {
-	pvr_ptr_t	ptr;		/**< Pointer to the PVR memory */
-	int		w;		/**< Texture width */
-	int		h;		/**< Texture height */
-	int		fmt;		/**< PVR texture format (e.g., PVR_TXRFMT_ARGB4444) */
+    pvr_ptr_t   ptr;        /**< Pointer to the PVR memory */
+    int     w;      /**< Texture width */
+    int     h;      /**< Texture height */
+    int     fmt;        /**< PVR texture format (e.g., PVR_TXRFMT_ARGB4444) */
 
-	/*** ARCH ***/
-	pvr_poly_cxt_t	cxt_opaque,
-			cxt_trans,
-			cxt_pt;		/**< PVR polygon contexts for each list for this texture */
-	pvr_poly_hdr_t	hdr_opaque,
-			hdr_trans,
-			hdr_pt;		/**< PVR polygon headers for each list for this texture */
+    /*** ARCH ***/
+    pvr_poly_cxt_t  cxt_opaque,
+            cxt_trans,
+            cxt_pt;     /**< PVR polygon contexts for each list for this texture */
+    pvr_poly_hdr_t  hdr_opaque,
+            hdr_trans,
+            hdr_pt;     /**< PVR polygon headers for each list for this texture */
 } plx_texture_t;
 
 /**
@@ -72,8 +72,8 @@ void plx_txr_destroy(plx_texture_t * txr);
 void plx_txr_setfilter(plx_texture_t * txr, int mode);
 
 /* Constants for plx_txr_setfilter */
-#define	PLX_FILTER_NONE		PVR_FILTER_NONE
-#define PLX_FILTER_BILINEAR	PVR_FILTER_BILINEAR
+#define PLX_FILTER_NONE     PVR_FILTER_NONE
+#define PLX_FILTER_BILINEAR PVR_FILTER_BILINEAR
 
 /**
   Edit the texture's header bits to specify the UV clamp types. All cached
@@ -83,8 +83,8 @@ void plx_txr_setfilter(plx_texture_t * txr, int mode);
 void plx_txr_setuvclamp(plx_texture_t * txr, int umode, int vmode);
 
 /* Constants for plx_txr_setuvclamp */
-#define PLX_UV_REPEAT	0
-#define PLX_UV_CLAMP	1
+#define PLX_UV_REPEAT   0
+#define PLX_UV_CLAMP    1
 
 /**
   Re-create the cached pvr_poly_hdr_t's from the struct's pvr_poly_cxt_t's.
@@ -102,4 +102,4 @@ void plx_txr_send_hdr(plx_texture_t * txr, int list, int flush);
 
 __END_DECLS
 
-#endif	/* __PARALLAX_TEXTURE */
+#endif  /* __PARALLAX_TEXTURE */

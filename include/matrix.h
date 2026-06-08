@@ -27,23 +27,23 @@ __BEGIN_DECLS
 #include <dc/matrix3d.h>
 
 /* dc/matrix.h -- basic matrix register operations. */
-#define plx_mat_store		mat_store
-#define plx_mat_load		mat_load
-#define plx_mat_identity	mat_identity
-#define plx_mat_apply		mat_apply
-#define plx_mat_transform	mat_transform
-#define plx_mat_tfip_3d		mat_trans_single
-#define plx_mat_tfip_3dw	mat_trans_single4
-#define plx_mat_tfip_2d		mat_trans_single3
+#define plx_mat_store       mat_store
+#define plx_mat_load        mat_load
+#define plx_mat_identity    mat_identity
+#define plx_mat_apply       mat_apply
+#define plx_mat_transform   mat_transform
+#define plx_mat_tfip_3d     mat_trans_single
+#define plx_mat_tfip_3dw    mat_trans_single4
+#define plx_mat_tfip_2d     mat_trans_single3
 
 /* dc/matrix3d.h -- some of these are still useful in 2D. All of
    the following work on the matrix registers. */
-#define plx_mat_rotate_x	mat_rotate_x
-#define plx_mat_rotate_y	mat_rotate_y
-#define plx_mat_rotate_z	mat_rotate_z
-#define plx_mat_rotate		mat_rotate
-#define plx_mat_translate	mat_translate
-#define plx_mat_scale		mat_scale
+#define plx_mat_rotate_x    mat_rotate_x
+#define plx_mat_rotate_y    mat_rotate_y
+#define plx_mat_rotate_z    mat_rotate_z
+#define plx_mat_rotate      mat_rotate
+#define plx_mat_translate   mat_translate
+#define plx_mat_scale       mat_scale
 
 /* The 3D matrix operations, somewhat simplified from KGL. All of these use
    the matrix regs, but do not primarily keep their values in them. To get
@@ -58,12 +58,12 @@ void plx_mat3d_init();
 void plx_mat3d_mode(int mode);
 
 /* Constants for plx_mat3d_mode and plx_mat3d_apply */
-#define	PLX_MAT_PROJECTION	0	/** Projection (frustum, screenview) matrix */
-#define PLX_MAT_MODELVIEW	1	/** Modelview (rotate, scale) matrix */
-#define PLX_MAT_SCREENVIEW	2	/** Internal screen view matrix */
-#define PLX_MAT_SCRATCH		3	/** Temp matrix for user usage */
-#define PLX_MAT_WORLDVIEW	4	/** Optional camera/worldview matrix */
-#define PLX_MAT_COUNT		5
+#define PLX_MAT_PROJECTION  0   /** Projection (frustum, screenview) matrix */
+#define PLX_MAT_MODELVIEW   1   /** Modelview (rotate, scale) matrix */
+#define PLX_MAT_SCREENVIEW  2   /** Internal screen view matrix */
+#define PLX_MAT_SCRATCH     3   /** Temp matrix for user usage */
+#define PLX_MAT_WORLDVIEW   4   /** Optional camera/worldview matrix */
+#define PLX_MAT_COUNT       5
 
 /** Load an identity matrix */
 void plx_mat3d_identity();
@@ -115,4 +115,4 @@ void plx_mat3d_apply_all();
 
 __END_DECLS
 
-#endif	/* __PARALLAX_MATRIX */
+#endif  /* __PARALLAX_MATRIX */

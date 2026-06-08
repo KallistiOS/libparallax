@@ -51,25 +51,25 @@ typedef struct plx_texture {
   non-zero value for use_alpha. The value for txrload_flags will be
   passed directly to pvr_txr_load_kimg().
  */
-plx_texture_t * plx_txr_load(const char * fn, int use_alpha, int txrload_flags);
+plx_texture_t *plx_txr_load(const char *fn, int use_alpha, int txrload_flags);
 
 /**
   Create a texture from raw PVR memory as a "canvas" for the application
   to draw into. Specify all the relevant parameters.
  */
-plx_texture_t * plx_txr_canvas(int w, int h, int fmt);
+plx_texture_t *plx_txr_canvas(int w, int h, int fmt);
 
 /**
   Destroy a previously created texture.
  */
-void plx_txr_destroy(plx_texture_t * txr);
+void plx_txr_destroy(plx_texture_t *txr);
 
 /**
   Edit the texture's header bits to specify the filtering type during
   scaling and perspective operations. All cached values will be updated.
   If you've already called send_hdr, you'll need to call it again.
  */
-void plx_txr_setfilter(plx_texture_t * txr, int mode);
+void plx_txr_setfilter(plx_texture_t *txr, int mode);
 
 /* Constants for plx_txr_setfilter */
 #define PLX_FILTER_NONE     PVR_FILTER_NONE
@@ -80,7 +80,7 @@ void plx_txr_setfilter(plx_texture_t * txr, int mode);
   values will be updated. If you've already called send_hdr, you'll need
   to call it again.
  */
-void plx_txr_setuvclamp(plx_texture_t * txr, int umode, int vmode);
+void plx_txr_setuvclamp(plx_texture_t *txr, int umode, int vmode);
 
 /* Constants for plx_txr_setuvclamp */
 #define PLX_UV_REPEAT   0
@@ -91,14 +91,14 @@ void plx_txr_setuvclamp(plx_texture_t * txr, int umode, int vmode);
   This is helpful if you want to manually tweak the parameters in the user
   friendly context structs.
  */
-void plx_txr_flush_hdrs(plx_texture_t * txr);
+void plx_txr_flush_hdrs(plx_texture_t *txr);
 
 /**
   Submit the polygon header for the given texture to the TA. If you specify
   a non-zero value for the flush parameter, it will call plx_txr_flush_hdrs()
   for you before sending the values.
  */
-void plx_txr_send_hdr(plx_texture_t * txr, int list, int flush);
+void plx_txr_send_hdr(plx_texture_t *txr, int list, int flush);
 
 __END_DECLS
 

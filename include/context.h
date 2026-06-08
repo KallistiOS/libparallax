@@ -24,7 +24,7 @@ __BEGIN_DECLS
 #include "texture.h"
 
 /** Initialize the context system */
-void plx_cxt_init();
+void plx_cxt_init(void);
 
 /**
   Select a texture for use with the context system. If you delete the

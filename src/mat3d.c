@@ -52,7 +52,7 @@ void plx_mat3d_mode(int mode) {
 }
 
 /* Load the identitiy matrix */
-void plx_mat3d_identity() {
+void plx_mat3d_identity(void) {
     mat_identity();
     mat_store(trans_mats + matrix_mode);
 }
@@ -153,7 +153,7 @@ void plx_mat3d_frustum(float left, float right,
     mat_store(trans_mats + matrix_mode);
 }
 
-void plx_mat3d_push() {
+void plx_mat3d_push(void) {
     switch (matrix_mode)
     {
     case PLX_MAT_MODELVIEW:
@@ -179,7 +179,7 @@ void plx_mat3d_push() {
     }
 }
 
-void plx_mat3d_pop() {
+void plx_mat3d_pop(void) {
     switch(matrix_mode)
     {
     case PLX_MAT_MODELVIEW:
@@ -205,7 +205,7 @@ void plx_mat3d_pop() {
     }
 }
 
-void plx_mat3d_peek() {
+void plx_mat3d_peek(void) {
     switch(matrix_mode)
     {
     case PLX_MAT_MODELVIEW:
@@ -408,7 +408,7 @@ void plx_mat3d_apply_mat(matrix_t * mat) {
     mat_store(trans_mats + matrix_mode);
 }
 
-void plx_mat3d_apply_all() {
+void plx_mat3d_apply_all(void) {
     mat_identity();
 
     msv[0][0] = vp_scale.x;
@@ -424,7 +424,7 @@ void plx_mat3d_apply_all() {
 
 
 /* Init */
-void plx_mat3d_init() {
+void plx_mat3d_init(void) {
     int i;
 
     /* Setup all the matrices */
